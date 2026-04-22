@@ -5,7 +5,8 @@ require("dotenv").config();
 const server = express();
 const port = process.env.PORT || 4000;
 
-require("./coon/mongo");
+const connectDB = require("./coon/mongo");
+connectDB();
 
 const product = require("./router/productrouter");
 const users = require("./router/useradd");
