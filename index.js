@@ -14,6 +14,7 @@ const order = require("./router/orderroute");
 const admin = require("./router/adminrouter");
 const home = require("./router/homeproduct");
 const time = require("./router/checkrouter");
+const tmdb = require("./router/tmdbrouter");
 
 server.use(cors({ origin: "*" }));
 server.use(express.json());
@@ -24,6 +25,7 @@ server.use("/order", order);
 server.use("/admin", admin);
 server.use("/data", home);
 server.use("/shiv", time);
+server.use("/tmdb", tmdb);
 
 server.get("/", (req, res) => {
     res.send("Server is running");
